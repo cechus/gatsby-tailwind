@@ -1,0 +1,35 @@
+/*! purgecss start ignore */
+@tailwind base;
+@tailwind components;
+/*! purgecss end ignore */
+@tailwind utilities;
+
+$my-color: green;
+
+body {
+  background: $my-color;
+}
+html.development,
+html.local {
+  body {
+    &:after {
+      content: 'A';
+      position: fixed;
+      left: -3px;
+      border-radius: 3px;
+      display: inline-block;
+      text-align: center;
+      background: #000;
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+        'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        'Noto Color Emoji';
+      z-index: 99999999;
+    }
+  }
+  &:hover {
+    body:after {
+      display: none;
+    }
+  }
+}
